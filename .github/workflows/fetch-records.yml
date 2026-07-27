@@ -1,9 +1,14 @@
-# Refreshes docs/_data/records.json from the archive backend (Zenodo /
-# InvenioRDM community) and commits any changes. GitHub Pages then rebuilds.
+# Refreshes docs/_data/records.json from the Humanities Commons (KC Works)
+# community and commits any changes. GitHub Pages then rebuilds.
 #
 # DORMANT until you are ready: it only runs when triggered by hand
-# (workflow_dispatch). To go live, (1) set COMMUNITY below to your real
-# community slug, and (2) uncomment the `schedule:` block.
+# (workflow_dispatch). To go fully live, uncomment the `schedule:` block —
+# the community slug below is already set to the real one.
+#
+# NOTE: while docs/_data/records.json still holds the sample records, running
+# this WILL overwrite them with whatever the community currently contains
+# (0 records until deposits are accepted). Only enable once you have real,
+# curated records — or you'll replace the demo with an empty archive.
 name: Fetch archive records
 
 on:
@@ -16,8 +21,8 @@ permissions:
   contents: write
 
 env:
-  BASE_URL: "https://zenodo.org"   # or https://works.hcommons.org for Knowledge Commons
-  COMMUNITY: "REPLACE-WITH-COMMUNITY-SLUG"
+  BASE_URL: "https://works.hcommons.org"
+  COMMUNITY: "lighting-design-archive"
 
 jobs:
   fetch:

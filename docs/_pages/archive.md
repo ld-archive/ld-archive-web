@@ -53,7 +53,7 @@ author_profile: false
     {% if r.description %}<p class="record-desc">{{ r.description | strip_html | truncate: 180 }}</p>{% endif %}
     {% if r.keywords %}<p class="record-keywords">{% for k in r.keywords %}<span class="tag">{{ k }}</span>{% endfor %}</p>{% endif %}
     <p class="record-links">
-      {% if r.doi_url %}<a href="{{ r.doi_url }}" rel="noopener" class="record-doi">View record on {{ r.source | default: "Zenodo" }} &rarr;</a>{% endif %}
+      {% if r.doi_url %}<a href="{{ r.doi_url }}" rel="noopener" class="record-doi">View record on {{ r.source | default: "Humanities Commons" }} &rarr;</a>{% endif %}
       {% if r.access %}<span class="access access-{{ r.access }}">{{ r.access }} access</span>{% endif %}
     </p>
   </article>

@@ -2,92 +2,155 @@
   {
     "id": "sample-0001",
     "title": "Hamlet",
-    "designers": ["Alex Rivera"],
+    "designers": [
+      "Alex Rivera"
+    ],
     "company": "Riverside Theatre Company",
     "venue": "The Old Vic, London",
     "director": "Sam Okonkwo",
     "year": 2023,
-    "doi": "10.5281/zenodo.0000001",
-    "doi_url": "https://doi.org/10.5281/zenodo.0000001",
-    "source": "Zenodo",
-    "access": "open",
+    "doi": "10.17613/smpl0-0001",
+    "doi_url": "https://doi.org/10.17613/smpl0-0001",
+    "source": "Humanities Commons",
+    "access": "public",
     "resource_type": "Lighting design",
     "description": "Full lighting plan, channel schedule and colour call for a thrust-stage production of Hamlet. Rig based on an ETC Eos console with a mix of conventional and moving-head fixtures.",
-    "keywords": ["Shakespeare", "tragedy", "ETC Eos", "thrust stage"],
-    "files": [{ "name": "hamlet-lighting-plan.pdf", "size": "4.2 MB" }]
+    "keywords": [
+      "Shakespeare",
+      "tragedy",
+      "ETC Eos",
+      "thrust stage"
+    ],
+    "files": [
+      {
+        "name": "hamlet-lighting-plan.pdf",
+        "size": "4.2 MB"
+      }
+    ]
   },
   {
     "id": "sample-0002",
     "title": "The Cherry Orchard",
-    "designers": ["Jordan Lee", "Priya Anand"],
+    "designers": [
+      "Jordan Lee",
+      "Priya Anand"
+    ],
     "company": "Northbank Ensemble",
     "venue": "Royal Exchange, Manchester",
     "director": "Elena Vasquez",
     "year": 2022,
-    "doi": "10.5281/zenodo.0000002",
-    "doi_url": "https://doi.org/10.5281/zenodo.0000002",
-    "source": "Zenodo",
-    "access": "open",
+    "doi": "10.17613/smpl0-0002",
+    "doi_url": "https://doi.org/10.17613/smpl0-0002",
+    "source": "Humanities Commons",
+    "access": "public",
     "resource_type": "Lighting design",
     "description": "In-the-round lighting design for Chekhov's The Cherry Orchard, including a section sheet and focus notes for a naturalistic daylight-to-dusk progression.",
-    "keywords": ["Chekhov", "in the round", "naturalism", "colour temperature"],
+    "keywords": [
+      "Chekhov",
+      "in the round",
+      "naturalism",
+      "colour temperature"
+    ],
     "files": [
-      { "name": "cherry-orchard-plan.pdf", "size": "6.8 MB" },
-      { "name": "cherry-orchard-focus-notes.pdf", "size": "1.1 MB" }
+      {
+        "name": "cherry-orchard-plan.pdf",
+        "size": "6.8 MB"
+      },
+      {
+        "name": "cherry-orchard-focus-notes.pdf",
+        "size": "1.1 MB"
+      }
     ]
   },
   {
     "id": "sample-0003",
     "title": "Blackout Cabaret",
-    "designers": ["Priya Anand"],
+    "designers": [
+      "Priya Anand"
+    ],
     "company": "Fringe Collective",
     "venue": "Summerhall, Edinburgh",
     "director": "Priya Anand",
     "year": 2024,
-    "doi": "10.5281/zenodo.0000003",
-    "doi_url": "https://doi.org/10.5281/zenodo.0000003",
-    "source": "Zenodo",
-    "access": "open",
+    "doi": "10.17613/smpl0-0003",
+    "doi_url": "https://doi.org/10.17613/smpl0-0003",
+    "source": "Humanities Commons",
+    "access": "public",
     "resource_type": "Lighting design",
     "description": "A touring-friendly lighting design for a small-scale cabaret, designed to adapt to unknown venues with a minimal fixture list and generic patch.",
-    "keywords": ["cabaret", "touring", "small scale", "generic rig"],
-    "files": [{ "name": "blackout-cabaret-plan.pdf", "size": "2.3 MB" }]
+    "keywords": [
+      "cabaret",
+      "touring",
+      "small scale",
+      "generic rig"
+    ],
+    "files": [
+      {
+        "name": "blackout-cabaret-plan.pdf",
+        "size": "2.3 MB"
+      }
+    ]
   },
   {
     "id": "sample-0004",
     "title": "A Midsummer Night's Dream",
-    "designers": ["Marcus Bell"],
+    "designers": [
+      "Marcus Bell"
+    ],
     "company": "Riverside Theatre Company",
     "venue": "The Old Vic, London",
     "director": "Sam Okonkwo",
     "year": 2021,
-    "doi": "10.5281/zenodo.0000004",
-    "doi_url": "https://doi.org/10.5281/zenodo.0000004",
-    "source": "Zenodo",
-    "access": "open",
+    "doi": "10.17613/smpl0-0004",
+    "doi_url": "https://doi.org/10.17613/smpl0-0004",
+    "source": "Humanities Commons",
+    "access": "public",
     "resource_type": "Lighting design",
     "description": "Lighting plan for an outdoor summer production using a mix of tungsten and LED wash, with a magic-hour transition scheme documented in the accompanying cue synopsis.",
-    "keywords": ["Shakespeare", "outdoor", "LED wash", "cue synopsis"],
-    "files": [{ "name": "midsummer-plan.pdf", "size": "5.5 MB" }]
+    "keywords": [
+      "Shakespeare",
+      "outdoor",
+      "LED wash",
+      "cue synopsis"
+    ],
+    "files": [
+      {
+        "name": "midsummer-plan.pdf",
+        "size": "5.5 MB"
+      }
+    ]
   },
   {
     "id": "sample-0005",
     "title": "Machinal",
-    "designers": ["Jordan Lee"],
+    "designers": [
+      "Jordan Lee"
+    ],
     "company": "Northbank Ensemble",
     "venue": "Young Vic, London",
     "director": "Elena Vasquez",
     "year": 2024,
-    "doi": "10.5281/zenodo.0000005",
-    "doi_url": "https://doi.org/10.5281/zenodo.0000005",
-    "source": "Zenodo",
-    "access": "open",
+    "doi": "10.17613/smpl0-0005",
+    "doi_url": "https://doi.org/10.17613/smpl0-0005",
+    "source": "Humanities Commons",
+    "access": "public",
     "resource_type": "Lighting design",
     "description": "Expressionist lighting design for Sophie Treadwell's Machinal, built around hard side-light and a mechanised, repetitive cueing structure. Includes plan, section and a full cue list.",
-    "keywords": ["expressionism", "side light", "Sophie Treadwell", "cue list"],
+    "keywords": [
+      "expressionism",
+      "side light",
+      "Sophie Treadwell",
+      "cue list"
+    ],
     "files": [
-      { "name": "machinal-plan.pdf", "size": "7.9 MB" },
-      { "name": "machinal-cue-list.pdf", "size": "0.9 MB" }
+      {
+        "name": "machinal-plan.pdf",
+        "size": "7.9 MB"
+      },
+      {
+        "name": "machinal-cue-list.pdf",
+        "size": "0.9 MB"
+      }
     ]
   }
 ]

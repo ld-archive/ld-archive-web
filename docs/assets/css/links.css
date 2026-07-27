@@ -1,0 +1,38 @@
+/* ===================================================================
+ * links.css — accessibility: never signal a link by colour alone
+ * (WCAG 2.2 SC 1.4.1). Links inside prose are always underlined; the
+ * underline is REMOVED on hover as an interaction affordance. Focus
+ * keeps the underline (plus the theme's focus ring) so keyboard users
+ * don't lose the cue.
+ *
+ * Scoped to text content (page body + footer prose). Masthead nav,
+ * buttons, and icon links are excluded on purpose — they're already
+ * distinguishable by shape and position, so underlining them would
+ * just look broken.
+ *
+ * Loaded site-wide via _includes/head/custom.html, after the theme's
+ * main.css, so these rules win on equal specificity.
+ * =================================================================== */
+
+.page__content a,
+.page__footer-info a {
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.page__content a:hover,
+.page__footer-info a:hover {
+	text-decoration: none;
+}
+
+/* Keep button-styled links and image links clean. */
+.page__content a.btn,
+.page__content a:has(> img) {
+	text-decoration: none;
+}
+
+/* The theme nests the sidebar TOC inside .page__content, so exclude it:
+   the TOC is a distinct navigation block, not prose. */
+.page__content nav.toc a {
+	text-decoration: none;
+}
