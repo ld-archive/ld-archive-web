@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-Welcome to our guide for contributing to the Lighting Design Archive.
+Welcome to our guide for contributing to the Lighting Design Archive. 
 
 ## 1. Prepare Your Files
 
@@ -46,16 +46,10 @@ To start uploading, you need to visit [works.hcommons.org](https://works.hcommon
 ![The homepage of Humanaties Commons](/assets/images/contributing/add-a-work@2x.png)
 
 There are 7 steps in order to share your file. Not all of them need to be completed, but the more accurate information you provide the more useful it will be in the future.
-At a minimum we need the following information:
-- Name of the performance
-- Location of the performance
-- Your name
-- Other key creatives, at a minimum the director/choreographer
-- Date of first performance.
 
 > **IMPORTANT** 
 >
-> Files can not be edited once they have been published. Metadata can still be updated. 
+> Files can not be edited once they have been published. 
 
 
 
