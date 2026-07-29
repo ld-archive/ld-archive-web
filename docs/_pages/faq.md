@@ -20,7 +20,7 @@ No. Upload documents that show your process. That might be different versions of
 
 ## What will happen to material I upload?
 
-It will be freely available for the world to see on this site and [Humanities Commons](https://hcommons.org/groups/lighting-design-archive). 
+It will be freely available for the world to see on this site and [Humanities Commons](https://hcommons.org/groups/lighting-design-archive). It will be available under the licence you select. 
 
 ## Can I upload something now and set it for release in the future.
 
@@ -51,3 +51,28 @@ can be identified as being your work. It's the easiest way to remove uncertenty 
 the same or similar names. 
 
 Getting an ORCID is free, and lasts forever. 
+
+## Why should I archive?
+
+Archiving your materials ensures that the broadest possible picture of lighting design for 
+performance is recorded. Much of our work is ephemeral, and once the show is done it may disappear.
+This archive hopes to make it possible for designers to archive their own materials —— we know best 
+what is interesting about our own work.
+
+Many venues archive materials, particularly large national ones. However, these don't always include lighting design paperwork. They are also scattered to lots of different venues. Instead a central repository helps to make sure future lighting designers can learn from your work.
+
+Including materials that show not only the finished product but also the process are extremely helpful as well. They can demistify the process of making, and ensure that others understand the context of your work.
+
+## What licence should I choose?
+
+That depends on what you want other people to be able to do with your materials.
+
+We recommend the Creative Commons Attribution Non Commercial 4.0 International, also called [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+CC BY-NC 4.0 allows any use that is non-commercial in nature, so long as the creator is credited. This would mean, educational, research, or professional development is allowed but reusing your plan to make a show _for commercial gain_ is not.
+
+We agnostic about the licence you choose; choose what suits you and makes you most comfortable.
+However, the more open the licence the more flexible the use in the future. 
+For help choosing the best licence condition use the
+[Creative Commons licence picker](https://creativecommons.org/chooser/). 
+
+There are many other open access licence types. This site use the [MIT Licence](https://github.com/ld-archive/ld-archive-web?tab=MIT-1-ov-file) for it's code. However, Creative Commons is aimed at creative works, so we recommend it.

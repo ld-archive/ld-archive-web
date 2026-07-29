@@ -1,0 +1,45 @@
+/* ===================================================================
+ * home.css — the landing page hero and feature grid.
+ * The record grid/cards come from the shared cards.css.
+ * =================================================================== */
+
+.home-lede {
+	font-size: 1.25em;
+	line-height: 1.5;
+	max-width: 40em;
+	opacity: 0.95;
+}
+
+.home-cta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75em;
+	margin: 1.5em 0 2.5em;
+}
+
+.home-section-title {
+	margin-top: 2.5em;
+}
+
+.home-more {
+	margin-top: 1em;
+	font-weight: 600;
+}
+
+.home-features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5em;
+	margin: 1em 0 2em;
+}
+
+.home-features h3 {
+	margin: 0 0 0.3em;
+	font-size: 1.05em;
+}
+
+.home-features p {
+	margin: 0;
+	font-size: 0.95em;
+	opacity: 0.9;
+}
