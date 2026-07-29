@@ -23,13 +23,15 @@ in a non-academic and accessible context.
 The project relies on GitHub Pages, using [Jekyl](https://jekyllrb.com/) and the [Minimal Mistakes](https://mademistakes.com/work/jekyll-themes/minimal-mistakes/) template.
 
 ## Contributing to the code
-We welcome contributions to the code. 
+We welcome contributions to the code. You can do so by simply making use of GitHub's tools. You can [report an issue](https://github.com/ld-archive/ld-archive-web/issues) or if you know the fix, simply create new fork!
+
+You can read more details about contributing on the [contributing tab](/CONTRIBUTING.md).
 
 > If you are looking to contribute to the archive
 > by providing some of your materials, then please 
 > [visit the contributions page](https://ld-archive.org/contribute).
 
-Contributions to the code are always welcomed. You can do so by simply making use of GitHub's tools. You can [report an issue](https://github.com/ld-archive/ld-archive-web/issues) or if you know the fix, simply create new fork!
+
 
 ## Thanks
 Huge thanks to the awesome communnity of open source projects.
