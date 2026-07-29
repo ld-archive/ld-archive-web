@@ -78,118 +78,15 @@
 	margin: 0.75em 0;
 }
 
-/* ===== Records grid ===== */
-
-.records-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: 1.25em;
-	margin-top: 0.5em;
-}
-
-.record-card {
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 10px;
-	padding: 1.1em 1.2em;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5em;
-}
-
-.record-card[hidden] {
-	display: none;
-}
-
-.record-title {
-	margin: 0;
-	font-size: 1.15em;
-	line-height: 1.2;
-}
-
-.record-designers {
-	margin: 0;
-	font-weight: 600;
-	opacity: 0.9;
-}
-
-.record-meta {
-	list-style: none;
-	margin: 0.25em 0;
-	padding: 0;
-	font-size: 0.85em;
-}
-
-.record-meta li {
-	margin: 0.1em 0;
-}
-
-.record-meta .k {
-	display: inline-block;
-	min-width: 5.5em;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	font-size: 0.85em;
-	font-weight: 700;
-	opacity: 0.6;
-}
-
-.record-desc {
-	font-size: 0.9em;
-	margin: 0.35em 0;
-	opacity: 0.9;
-}
-
-.record-keywords {
-	margin: 0.25em 0;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.35em;
-}
-
-.record-keywords .tag {
-	font-size: 0.72em;
-	padding: 0.15em 0.55em;
-	border-radius: 999px;
-	background: rgba(0, 0, 0, 0.07);
-	white-space: nowrap;
-}
-
-.record-links {
-	margin: 0.5em 0 0;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: 0.5em;
-}
-
-.record-doi {
-	font-weight: 600;
-}
-
-.access {
-	font-size: 0.72em;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	padding: 0.15em 0.55em;
-	border-radius: 999px;
-	border: 1px solid currentColor;
-	opacity: 0.7;
-}
+/* The record card and its grid now live in cards.css (shared with the
+   home page). Only the archive's own search controls remain here. */
 
 .no-results {
 	margin-top: 1.5em;
 	font-size: 1em;
 }
 
-/* Slightly stronger card borders where the OS prefers dark. */
 @media (prefers-color-scheme: dark) {
-	.record-card {
-		border-color: rgba(255, 255, 255, 0.18);
-	}
-	.record-keywords .tag {
-		background: rgba(255, 255, 255, 0.12);
-	}
 	.clear-filters:hover {
 		background: rgba(255, 255, 255, 0.08);
 	}

@@ -34,29 +34,7 @@ author_profile: false
 
 <div class="records-grid" id="records">
 {% for r in site.data.records %}
-  {% assign designers = r.designers | join: "||" %}
-  {% capture blob %}{{ r.title }} {{ r.designers | join: " " }} {{ r.venue }} {{ r.director }} {{ r.company }} {{ r.description }} {{ r.keywords | join: " " }} {{ r.year }}{% endcapture %}
-  <article class="record-card"
-    data-search="{{ blob | strip_newlines | downcase | escape }}"
-    data-designers="{{ designers | downcase | escape }}"
-    data-designers-display="{{ r.designers | join: '||' | escape }}"
-    data-venue="{{ r.venue | escape }}"
-    data-year="{{ r.year }}">
-    <h3 class="record-title">{{ r.title }}</h3>
-    {% if r.designers %}<p class="record-designers">{{ r.designers | join: ", " }}</p>{% endif %}
-    <ul class="record-meta">
-      {% if r.venue %}<li><span class="k">Venue</span> {{ r.venue }}</li>{% endif %}
-      {% if r.company %}<li><span class="k">Company</span> {{ r.company }}</li>{% endif %}
-      {% if r.director %}<li><span class="k">Director</span> {{ r.director }}</li>{% endif %}
-      {% if r.year %}<li><span class="k">Year</span> {{ r.year }}</li>{% endif %}
-    </ul>
-    {% if r.description %}<p class="record-desc">{{ r.description | strip_html | truncate: 180 }}</p>{% endif %}
-    {% if r.keywords %}<p class="record-keywords">{% for k in r.keywords %}<span class="tag">{{ k }}</span>{% endfor %}</p>{% endif %}
-    <p class="record-links">
-      {% if r.doi_url %}<a href="{{ r.doi_url }}" rel="noopener" class="record-doi">View record on {{ r.source | default: "Zenodo" }} &rarr;</a>{% endif %}
-      {% if r.access %}<span class="access access-{{ r.access }}">{{ r.access }} access</span>{% endif %}
-    </p>
-  </article>
+{% include record-card.html record=r search=true %}
 {% endfor %}
 </div>
 

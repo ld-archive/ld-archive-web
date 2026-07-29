@@ -5,3 +5,7 @@ main:
     url: /archive/
   - title: "About"
     url: /about/
+  - title: "Contact"
+    url: /contact/
+  - title: "Contribute"
+    url: /contribute/

@@ -21,9 +21,9 @@
 title: LD-Archive.org
 email: contact@ld-archive.org
 description: >- # this means to ignore newlines until "baseurl:"
-  LD-Archive.org is the home of archived content from The Lighting Design Archive,
-  a project of the Royal Academy of Dramatic Art (RADA) in London. The Archive contains a 
-  collection of lighting design materials submitted by lighting designers for live performance.
+  LD-Archive.org is the home of archived content from The Lighting Design Archive. 
+  The Archive contains a collection of lighting design materials submitted by 
+  lighting designers for live performance.
 domain: ld-archive.org
 baseurl: "" # served from the domain root (apex domain via CNAME). This is a URL path prefix, NOT the source folder — the /docs source folder is set in GitHub Pages settings.
 url: "https://ld-archive.org" # the base hostname & protocol for your site, e.g. http://example.com
@@ -50,11 +50,14 @@ locale: "en-GB"
 # renders an empty <i class="github"> with no icon.
 author:
   name: "The Lighting Design Archive"
-  bio: "A public archive of theatre lighting design materials, a project of RADA."
+  bio: "A public archive of performance lighting design."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ld-archive"
+    - label: "Humanities Commons"
+      icon: "fas fa-fw fa-university"
+      url: "https://hcommons.org/groups/lighting-design-archive/"
 
 # Footer social icons and copyright line, read directly by the theme's
 # _includes/footer.html. Longer-form footer text lives in

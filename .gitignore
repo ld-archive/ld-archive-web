@@ -16,3 +16,36 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Ignore any files that are created by an AI Model to generate content for the site.
+# These files are not part of the source code and should not be tracked by Git.
+# Common agent instruction/state locations used by local coding assistants.
+# These are all useful for an individual developer, but not useful for a team or for source control.
+.claude/
+.cursor/
+.copilot/
+.aider*
+.cursorrules
+.github/copilot-instructions.md
+.gpt/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+
+# Ignore OS/editor noise and local environment files.
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ignore local dependency and build artifacts that are not needed in source control.
+.bundle/
+node_modules/
+coverage/
+*.log

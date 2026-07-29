@@ -4,20 +4,30 @@
 # The Lighting Design Archive — LD-Archive.org
 # Author: Anthony Arblaster
 #
-# Pulls records from an InvenioRDM community (Zenodo, or any InvenioRDM
-# instance such as Knowledge Commons Works) and writes them, normalised,
-# to docs/_data/records.json so the static site can render and search them.
+# Pulls records from a Humanities Commons (Knowledge Commons Works)
+# community and writes them, normalised, to docs/_data/records.json so the
+# static site can render and search them.
 #
 # The site never talks to the API at page-load time: this runs at build
 # time (see .github/workflows/fetch-records.yml) and the site reads the
-# cached JSON. Swapping backends is just a different BASE_URL + COMMUNITY.
+# cached JSON.
+#
+# KC Works runs InvenioRDM. Two instance-specific facts verified against the
+# live API (2026-07), NOT assumed:
+#   * Community records come from  /api/communities/<slug>/records
+#     The Zenodo-style  /api/records?communities=<slug>  is SILENTLY IGNORED
+#     by KC Works and returns the entire 42k-record repository.
+#   * access.record is "public" / "restricted" (not Zenodo's "open").
+#   * custom fields use a "kcr:" prefix; there are no arbitrary per-community
+#     fields, so domain metadata (venue, director, company) has no native home
+#     yet — see the note in normalise_record().
 #
 # Dependency-free (standard library only).
 #
 # Usage:
 #   python3 scripts/fetch_records.py \
-#       --base-url https://zenodo.org \
-#       --community your-community-slug \
+#       --base-url https://works.hcommons.org \
+#       --community lighting-design-archive \
 #       --out docs/_data/records.json
 # ---------------------------------------------------------------------------
 
@@ -29,24 +39,18 @@ import urllib.request
 
 PAGE_SIZE = 100
 USER_AGENT = "ld-archive-web/1.0 (+https://ld-archive.org)"
+SOURCE_NAME = "Humanities Commons"
 
 
 def fetch_page(base_url, community, page):
-	"""Fetch one page of records for a community from an InvenioRDM API."""
-	query = urllib.parse.urlencode(
-		{"communities": community, "size": PAGE_SIZE, "page": page}
+	"""Fetch one page of a community's records from the KC Works API."""
+	query = urllib.parse.urlencode({"size": PAGE_SIZE, "page": page})
+	url = "{}/api/communities/{}/records?{}".format(
+		base_url.rstrip("/"), urllib.parse.quote(community), query
 	)
-	url = base_url.rstrip("/") + "/api/records?" + query
 	request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
 	with urllib.request.urlopen(request, timeout=30) as response:
 		return json.loads(response.read().decode("utf-8"))
-
-
-def first_or_empty(value):
-	"""Return the first element of a list, or an empty string."""
-	if isinstance(value, list) and value:
-		return value[0]
-	return ""
 
 
 def year_from_date(date_string):
@@ -56,54 +60,70 @@ def year_from_date(date_string):
 	return ""
 
 
-def normalise_record(hit):
-	"""Map one InvenioRDM record onto the archive's flat record shape.
+def resource_type_title(metadata):
+	"""Human-readable resource type, e.g. 'Report'."""
+	resource_type = metadata.get("resource_type")
+	if isinstance(resource_type, dict):
+		return resource_type.get("title", {}).get("en", "")
+	return ""
 
-	Standard fields (title, creators, date, DOI, access, keywords) map
-	cleanly. Domain-specific fields (venue, company, director) are read
-	from InvenioRDM custom fields if present; otherwise left blank until
-	the metadata schema is finalised.
+
+def collect_keywords(metadata, custom):
+	"""Merge FAST/topical subjects with the depositor's free-text tags."""
+	keywords = [
+		subject.get("subject", "") if isinstance(subject, dict) else str(subject)
+		for subject in metadata.get("subjects", [])
+	]
+	keywords += custom.get("kcr:user_defined_tags", []) or []
+	return [k for k in keywords if k]
+
+
+def normalise_record(hit):
+	"""Map one KC Works record onto the archive's flat record shape.
+
+	Standard fields (title, creators->designers, date, DOI, access, keywords)
+	map cleanly. Domain-specific fields (venue, company, director) have no
+	native home on Humanities Commons: KC Works exposes only fixed "kcr:"
+	custom fields, not arbitrary per-community ones. Until a metadata
+	convention is agreed (likely encoding them in kcr:user_defined_tags, e.g.
+	"venue:The Old Vic"), these are left blank rather than guessed.
 	"""
 	metadata = hit.get("metadata", {})
 	custom = hit.get("custom_fields", {})
 
 	designers = [
-		creator.get("person_or_org", {}).get("name")
-		or creator.get("name", "")
+		creator.get("person_or_org", {}).get("name") or creator.get("name", "")
 		for creator in metadata.get("creators", [])
 	]
 	designers = [name for name in designers if name]
 
-	doi = hit.get("pids", {}).get("doi", {}).get("identifier") or hit.get("doi", "")
-	doi_url = "https://doi.org/" + doi if doi else hit.get("links", {}).get("self_html", "")
+	doi = hit.get("pids", {}).get("doi", {}).get("identifier", "")
+	doi_url = (
+		"https://doi.org/" + doi
+		if doi
+		else hit.get("links", {}).get("self_html", "")
+	)
 
-	files = []
-	for name, entry in (hit.get("files", {}).get("entries", {}) or {}).items():
-		files.append({"name": name, "size": entry.get("size", "")})
+	files = [
+		{"name": name, "size": entry.get("size", "")}
+		for name, entry in (hit.get("files", {}).get("entries", {}) or {}).items()
+	]
 
 	return {
 		"id": str(hit.get("id", "")),
 		"title": metadata.get("title", "Untitled"),
 		"designers": designers,
-		"company": custom.get("ldarchive:company", ""),
-		"venue": custom.get("ldarchive:venue", ""),
-		"director": custom.get("ldarchive:director", ""),
+		"company": "",   # no native field on HC — see docstring
+		"venue": "",     # no native field on HC — see docstring
+		"director": "",  # no native field on HC — see docstring
 		"year": year_from_date(metadata.get("publication_date", "")),
 		"doi": doi,
 		"doi_url": doi_url,
-		"source": "Zenodo",
-		"access": hit.get("access", {}).get("record", "")
-		or metadata.get("access_right", ""),
-		"resource_type": (metadata.get("resource_type") or {}).get("title", {}).get(
-			"en", ""
-		)
-		if isinstance(metadata.get("resource_type"), dict)
-		else "",
+		"source": SOURCE_NAME,
+		"access": hit.get("access", {}).get("record", ""),
+		"resource_type": resource_type_title(metadata),
 		"description": metadata.get("description", ""),
-		"keywords": [
-			subject.get("subject", "") if isinstance(subject, dict) else str(subject)
-			for subject in metadata.get("subjects", [])
-		],
+		"keywords": collect_keywords(metadata, custom),
 		"files": files,
 	}
 
@@ -127,8 +147,8 @@ def fetch_all(base_url, community):
 
 def main():
 	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument("--base-url", default="https://zenodo.org")
-	parser.add_argument("--community", required=True, help="Community slug")
+	parser.add_argument("--base-url", default="https://works.hcommons.org")
+	parser.add_argument("--community", default="lighting-design-archive")
 	parser.add_argument("--out", default="docs/_data/records.json")
 	args = parser.parse_args()
 

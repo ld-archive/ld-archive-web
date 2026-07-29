@@ -1,0 +1,51 @@
+---
+layout: single
+permalink: /
+title: The Lighting Design Archive
+classes: wide
+author_profile: false
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+
+<p class="home-lede">An open-access home for theatre lighting design. Browse plans, sections,
+cue synopses and production paperwork shared by lighting designers — each preserved with a
+permanent DOI and free for anyone to study, teach from and cite.</p>
+
+<p class="home-cta">
+  <a href="{{ '/archive/' | relative_url }}" class="btn btn--primary">Browse the archive</a>
+  <a href="{{ '/contribute/' | relative_url }}" class="btn btn--inverse">Contribute your work</a>
+</p>
+
+<h2 class="home-section-title">Recently added</h2>
+
+<div class="records-grid">
+{% assign recent = site.data.records | sort: "year" | reverse %}
+{% for r in recent limit: 3 %}
+{% include record-card.html record=r %}
+{% endfor %}
+</div>
+
+<p class="home-more"><a href="{{ '/archive/' | relative_url }}">Browse all {{ site.data.records | size }} records &rarr;</a></p>
+
+<h2 class="home-section-title">Why archive lighting design?</h2>
+
+<div class="home-features">
+  <div>
+    <h3>Open access</h3>
+    <p>Every record is free to read, download and cite — no account, no paywall.</p>
+  </div>
+  <div>
+    <h3>Permanent &amp; citable</h3>
+    <p>Files are preserved by <a href="https://hcommons.org">Humanities Commons</a> and given a
+    DOI, so they stay findable for the long term.</p>
+  </div>
+  <div>
+    <h3>By designers, for designers</h3>
+    <p>A growing resource for students, researchers, historians and working artists to see how
+    designs were made.</p>
+  </div>
+</div>
+
+<p>The archive is a project of the Lighting Department at <a href="https://rada.ac.uk">RADA</a>.
+Have work to share? <a href="{{ '/contribute/' | relative_url }}">Find out how to contribute</a>.</p>
