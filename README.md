@@ -1,8 +1,12 @@
 # LD-Archive.org Website
 
+
+[![DOI](https://zenodo.org/badge/1303253539.svg)](https://doi.org/10.5281/zenodo.21721185)
+
 ![GitHub release](https://img.shields.io/github/release/ld-archive/ld-archive-web.svg)
 ![GitHub All Releases](https://img.shields.io/github/downloads/ld-archive/ld-archive-web/total.svg)
 ![GitHub](https://img.shields.io/github/license/ld-archive/ld-archive-web.svg)
+
 
 The GitHub Pages website for LD-archive.org made using Jekyl. 
 This project is a simple and accessible way of accessing, searching and 
