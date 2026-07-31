@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Arblaster"
+  given-names: "Anthony"
+  orcid: "https://orcid.org/0009-0005-0404-0645"
+title: "ld-archive-web"
+version: 1.0-beta-2
+doi: 10.5281/zenodo.1234
+date-released: 2026-07-31
+url: "https://github.com/ld-archive/ld-archive-web"
