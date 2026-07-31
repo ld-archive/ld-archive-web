@@ -7,6 +7,8 @@ Params:
 Lines are left-aligned on purpose: this include is used inside markdown
 pages, where leading indentation would be parsed as a code block.
 {%- endcomment -%}
+
+
 {%- assign r = include.record -%}
 {%- if include.search -%}
 {%- assign designers = r.designers | join: "||" -%}

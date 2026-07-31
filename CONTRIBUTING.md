@@ -63,6 +63,23 @@ To make future contributor's lives easier please include comments about the purp
 and what they reference.
 Comments should avoid idioms, and should always comply with our [Code of Conduct](/CODE_OF_CONDUCT.md).
 
-## Testing
+### Testing
 
-The site is designed to be tested using Docker or Jekyll directly. You can find instructions [here.](https://jekyllrb.com/docs/installation/)
+The site is designed to be tested using Docker. You can find instructions [here.](https://jekyllrb.com/docs/installation/)
+
+### Accessibility
+
+Please help keep the site accessible and usable for all visitors. When making changes to content or layout, aim to follow common accessibility best practices such as WCAG 2.1 AA where practical.
+
+Before submitting a pull request, you can check your changes by:
+
+* Reviewing pages with a keyboard only to make sure navigation and interactive elements are reachable and usable.
+* Checking that images have descriptive alternative text where needed and that links/buttons use clear, meaningful labels.
+* Ensuring headings are structured in a logical order and that text has sufficient contrast against the background.
+* Running an automated accessibility audit in your browser, such as Lighthouse or axe DevTools, and addressing any issues it reports.
+
+If you are unsure whether a change is accessible, it is better to ask for review than to assume it is fine.
+
+## Thank You
+
+Thank you for being interested in contributing to the project. 
