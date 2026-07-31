@@ -4,8 +4,8 @@
 [![DOI](https://zenodo.org/badge/1303253539.svg)](https://doi.org/10.5281/zenodo.21721185)
 
 ![GitHub Created At](https://img.shields.io/github/created-at/ld-archive/ld-archive-web)
-![GitHub All Releases](https://img.shields.io/github/downloads/ld-archive/ld-archive-web/total.svg)
-![GitHub](https://img.shields.io/github/license/ld-archive/ld-archive-web.svg)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ld-archive/ld-archive-web/total)
+![GitHub License](https://img.shields.io/github/license/ld-archive/ld-archive-web)
 
 
 The GitHub Pages website for LD-archive.org made using Jekyl. 
